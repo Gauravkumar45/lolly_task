@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Commas</title>
-</head>
-<body>
-    <h1>Set commas</h1>
+{% extends 'base.html' %}
+
+{%block title %} Commas {%endblock%}
+
+{% include 'header.html' %}
+
+{%block contant%}
+    <h1><center>Set commas</center></h1>
     <div class="container">
         <form method="post">
             {% csrf_token %}
@@ -15,6 +13,9 @@
             <button type="submit" class="btn btn-primary">Check commas</button>
           </form> 
     </div>
-    <p>{{commas}}</p>
-</body>
-</html>
+    <div class="container my-3">
+        <p><i>After set commas</i></p>
+        <p><b>{{value}}</b></p>
+    </div>
+
+{%endblock%}

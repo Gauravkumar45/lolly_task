@@ -1,27 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>upload File</title>
-</head>
-<body>
-    <h1>Upload files and Count the data of files</h1>
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        <input type="file" name="file"><br>
-        <input type="submit">
-    </form>
-    <h2><i>Counts of data</i></h2>
-    <code class="prettyprint">
-        var data = {
-            "title" : {_},
-            "description" : {_},
-            "tone" : {_},
-            "numModel1" : {_},
-            "numModel2" : {_}
-        }
-    </code>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{%block title %} Upload {%endblock%}
+
+{%block contant%}
+    <h1><center>Upload files and Count the data of files</center></h1>
+    <div classs="container">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" name="file"><br>
+            <input type="submit">
+        </form>
+    </div>
+        {{obj}}
+        {% comment %} <h2><i>Counts of data</i></h2>
+        <code class="prettyprint">
+            var data = {
+                "title" : {_},
+                "description" : {_},
+                "tone" : {_},
+                "numModel1" : {_},
+                "numModel2" : {_}
+            }
+        </code> {% endcomment %}
+
+
+{% endblock %}
